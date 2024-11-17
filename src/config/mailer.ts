@@ -10,12 +10,12 @@ export const MailService = {
       console.log('Ethereal Test Account:', testAccount);
 
       this.transporter = nodemailer.createTransport({
-        host: 'smtp.ethereal.email',
+        host: 'buysharein.com',
         port: 587,
         secure: false, // Use TLS
         auth: {
-          user: testAccount.user, // Ethereal generated user
-          pass: testAccount.pass, // Ethereal generated password
+          user: "support@buysharein.com", // Ethereal generated user
+          pass: "nPWfA7QiBaEdmhG", // Ethereal generated password
         },
       });
     }
@@ -28,7 +28,7 @@ export const MailService = {
     }
 
     const mailOptions = {
-      from: '"Your App" <no-reply@example.com>', // Sender address
+      from: "support@buysharein.com", // Sender address
       to, // Receiver address
       subject, // Subject line
       text, // Plain text body
@@ -39,7 +39,7 @@ export const MailService = {
       const info = await this.transporter!.sendMail(mailOptions);
       console.log(`Email sent: ${info.messageId}`);
       console.log(`Email sent: ${to}`);
-      console.log(`Preview URL: ${nodemailer.getTestMessageUrl(info)}`);
+     // console.log(`Preview URL: ${nodemailer.getTestMessageUrl(info)}`);
     } catch (error) {
       console.error('Error sending email:', error);
     }

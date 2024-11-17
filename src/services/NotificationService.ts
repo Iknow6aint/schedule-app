@@ -4,7 +4,7 @@ import { MailService } from '../config/mailer';
 
 export const NotificationService = {
   async getCustomers() {
-    return Customer.find({}, { name: 1, email: 1, phone: 1 });
+    return Customer.find();
   },
 
   async sendCustomNotification(data: {
